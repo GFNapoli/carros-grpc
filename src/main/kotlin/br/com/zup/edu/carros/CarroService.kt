@@ -6,8 +6,10 @@ import br.com.zup.edu.CarrosGrpcServiceGrpc
 import io.grpc.Status
 import io.grpc.stub.StreamObserver
 import javax.inject.Inject
+import javax.inject.Singleton
 import javax.validation.ConstraintViolationException
 
+@Singleton
 class CarroService(@Inject val repository: CarroRepository): CarrosGrpcServiceGrpc.CarrosGrpcServiceImplBase() {
 
     override fun adicionar(request: CarroRequest?, responseObserver: StreamObserver<CarroResponse>?) {
